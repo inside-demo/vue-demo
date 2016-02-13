@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "xo",
     "build": "webpack"
   },
   "keywords": [],
@@ -19,6 +20,7 @@
     "vue-loader": "^8.1.1",
     "vue-resource": "^0.7.0",
     "vue-style-loader": "^1.0.0",
-    "webpack": "^2.0.7-beta"
+    "webpack": "^2.0.7-beta",
+    "xo": "^0.12.1"
   }
 }
