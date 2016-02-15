@@ -16,7 +16,7 @@
 		},
 		methods: {
 			onSend: function () {
-				this.$http.post('http://all-p.ru/test.php', this.$data, {emulateJSON: true}).then(function(response) {
+				this.$http.post('url', this.$data, {emulateJSON: true}).then(function(response) {
 					console.log('success')
 					console.log(response)
 				}, function(response) {
