@@ -17,3 +17,6 @@
 
 [codestyle-url]: https://github.com/sindresorhus/xo
 [codestyle-image]: https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square
+
+[doc](http://vuejs.org/)
+[doc loader](http://vuejs.github.io/vue-loader/index.html)
