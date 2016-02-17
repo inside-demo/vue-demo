@@ -3,6 +3,7 @@ import http from 'vue-resource';
 
 Vue.use(http);
 
+/* eslint-disable no-new */
 new Vue({
 	el: '#demo',
 	data: {
