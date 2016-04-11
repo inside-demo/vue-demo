@@ -21,3 +21,4 @@
 ## Docs
 - [doc vue](http://vuejs.org/)
 - [doc vue-loader](http://vuejs.github.io/vue-loader/index.html)
+- [table sort](https://jsfiddle.net/m7sgaron/254/)
