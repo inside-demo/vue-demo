@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "serve": "webpack-dev-server --content-base docs/"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "babel-loader": "^7.0.0-beta.1",
+    "babel-preset-env": "^2.0.0-alpha.1",
+    "babel-register": "^7.0.0-alpha.2",
+    "css-loader": "^0.27.3",
+    "style-loader": "^0.15.0",
+    "vue": "^2.2.5",
+    "vue-loader": "^11.3.2",
+    "vue-router": "^2.3.0",
+    "vue-template-compiler": "^2.2.5",
+    "webpack": "^2.3.0",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {}
+}
