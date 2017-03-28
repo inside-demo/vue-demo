@@ -19,30 +19,3 @@
 
 [codestyle-url]: https://github.com/sindresorhus/xo
 [codestyle-image]: https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square
-
-## vue3-breadcrumbs
-```js
-export default {
-	install(Vue, options) {
-		Object.defineProperties(Vue.prototype, {
-			$breadcrumbs: {
-				get() {
-					return this.$route.matched;
-				}
-			}
-		})
-
-		Vue.component('breadcrumbs', {
-			template: `
-				<ol class="breadcrumb" v-if="$breadcrumbs.length">
-					<li class="breadcrumb-item" v-if="crumb.meta.breadcrumb" v-for="(crumb, i) in $breadcrumbs">
-						<router-link :to=" { path: crumb.path }">
-							{{ crumb.meta.breadcrumb }}
-						</router-link>
-					</li>
-				</ol>
-			`
-		})
-	}
-}
-```
