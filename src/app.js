@@ -1,47 +1,64 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from './home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from './home.vue';
+import VueBreadcrumbs from 'vue2-breadcrumbs';
 
-// 1. Use plugin.
-// This installs <router-view> and <router-link>,
-// and injects $router and $route to all router-enabled child components
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(VueBreadcrumbs);
 
-// 2. Define route components
-const Biz = { template: '<div>biz</div>' }
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
+const Feeds = { template: '<div><h1>Feeds</h1> <router-view/></div>' };
+const Foo = { template: '<div><h2>foo</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa voluptate quia quas assumenda beatae vero? Omnis, praesentium. Magni nesciunt alias eligendi suscipit vel dolor accusantium, itaque possimus nulla maiores nostrum.</p></div>' };
+const Bar = { template: '<div><h2>Bar</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa voluptate quia quas assumenda beatae vero? Omnis, praesentium. Magni nesciunt alias eligendi suscipit vel dolor accusantium, itaque possimus nulla maiores nostrum.</p></div>' };
 
-// 3. Create the router
 const router = new VueRouter({
   routes: [
-    { path: '/', component: Biz },
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar }
+  	{ path: '/', redirect: '/feeds' },
+    {
+    	path: '/feeds',
+    	component: Feeds,
+    	meta: {
+	      breadcrumb: 'Feeds'
+	    },
+    	children: [
+    		{
+    			path: 'foo',
+    			component: Foo,
+		    	meta: {
+			      breadcrumb: 'foo'
+			    }
+    		},
+    		{
+    			path: 'bar',
+    			component: Bar,
+		    	meta: {
+			      breadcrumb: 'bar'
+			    }
+    		}
+    	]
+    }
   ]
-})
+});
 
-// 4. Create and mount root instance.
-// Make sure to inject the router.
-// Route components will be rendered inside <router-view>.
 new Vue({
   router,
   components: {
     Home: Home
   },
   template: `
-    <div id="app">
-      <h1>Basic</h1>
-      <ul>
-        <li><router-link to="/">/</router-link></li>
-        <li><router-link to="/foo">/foo</router-link></li>
-        <li><router-link to="/bar">/bar</router-link></li>
-        <router-link tag="li" to="/bar" :event="['mousedown', 'touchstart']">
-          <a>/bar</a>
-        </router-link>
+    <div id="app" class="container">
+      <ul class="nav">
+        <li class="nav-item  dropdown">
+        	<router-link to="/feeds" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Feeds</router-link>
+        	<div class="dropdown-menu">
+				<router-link to="/feeds/foo" class="dropdown-item">Foo</router-link>
+				<router-link to="/feeds/bar" class="dropdown-item">Bar</router-link>
+        	</div>
+        </li>
       </ul>
-      <router-view class="view"></router-view>
-      <Home></Home>
+      <breadcrumbs/>
+      <router-view/>
+      <hr>
+      <Home/>
     </div>
   `
 }).$mount('#app')
