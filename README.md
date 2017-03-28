@@ -35,7 +35,7 @@ export default {
 		Vue.component('breadcrumbs', {
 			template: `
 				<ol class="breadcrumb" v-if="$breadcrumbs.length">
-					<li class="breadcrumb-item" v-for="(crumb, i) in $breadcrumbs">
+					<li class="breadcrumb-item" v-if="crumb.meta.breadcrumb" v-for="(crumb, i) in $breadcrumbs">
 						<router-link :to=" { path: crumb.path }">
 							{{ crumb.meta.breadcrumb }}
 						</router-link>
