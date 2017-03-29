@@ -55,8 +55,8 @@ new Vue({
 				<li class="nav-item  dropdown">
 					<router-link to="/feeds" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Feeds</router-link>
 					<div class="dropdown-menu">
-				<router-link to="/feeds/foo" class="dropdown-item">Foo</router-link>
-				<router-link to="/feeds/bar" class="dropdown-item">Bar</router-link>
+						<router-link to="/feeds/foo" class="dropdown-item">Foo</router-link>
+						<router-link to="/feeds/bar" class="dropdown-item">Bar</router-link>
 					</div>
 				</li>
 			</ul>
