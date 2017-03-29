@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "serve": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.babel.js --content-base docs/"
+    "serve": "webpack-dashboard -- webpack-dev-server --content-base docs/ --open"
   },
   "babel": {
     "presets": [
