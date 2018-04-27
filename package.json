@@ -26,11 +26,12 @@
   "devDependencies": {
     "babel-loader": "^7.0.0-beta.1",
     "babel-preset-env": "^2.0.0-alpha.1",
+    "babel-preset-minify": "^0.4.0",
     "babel-register": "^7.0.0-alpha.2",
     "css-loader": "^0.27.3",
     "style-loader": "^0.15.0",
     "vue": "^2.2.5",
-    "vue-2-breadcrumbs": "0.0.1",
+    "vue-2-breadcrumbs": "0.2.4",
     "vue-loader": "^11.3.2",
     "vue-router": "^2.3.0",
     "vue-template-compiler": "^2.2.5",
