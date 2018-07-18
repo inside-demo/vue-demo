@@ -3,7 +3,8 @@ import DashboardPlugin from 'webpack-dashboard/plugin';
 import path from 'path';
 
 export default {
-	devtool: 'eval',
+	target: 'web',
+	devtool: 'eval-source-map',
 	context: path.resolve(__dirname + '/src/'),
 	entry: {
 		app: './app.js'
@@ -13,10 +14,7 @@ export default {
 		filename: '[name].bundle.js'
 	},
 	plugins: [
-		new DashboardPlugin(),
-	  	new webpack.DefinePlugin({
-	    	'process.env':{NODE_ENV: '"production"'}
-	  	})
+		new DashboardPlugin()
 	],
 	resolveLoader: {
 		modules: [path.resolve(__dirname, "src"), 'node_modules'],

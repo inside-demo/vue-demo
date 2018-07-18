@@ -7,36 +7,46 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode development",
     "watch": "webpack --watch",
-    "serve": "webpack-dashboard -- webpack-dev-server --content-base docs/ --open"
+    "serve": "webpack-dashboard -- webpack-dev-server  --mode development --content-base docs/ --open"
   },
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": {
             "node": "current"
           }
         }
+      ],
+      [
+        "minify",
+        {
+          "removeUndefined": false,
+          "mangle": false
+        }
       ]
     ]
   },
   "devDependencies": {
-    "babel-loader": "^7.0.0-beta.1",
-    "babel-preset-env": "^2.0.0-alpha.1",
-    "babel-preset-minify": "^0.4.0",
-    "babel-register": "^7.0.0-alpha.2",
-    "css-loader": "^0.27.3",
-    "style-loader": "^0.15.0",
+    "@babel/cli": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/register": "^7.0.0-beta.54",
+    "babel-loader": "^8.0.0-beta.4",
+    "babel-preset-minify": "^0.4.3",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.21.0",
     "vue": "^2.2.5",
-    "vue-2-breadcrumbs": "0.2.4",
-    "vue-loader": "^11.3.2",
-    "vue-router": "^2.3.0",
+    "vue-2-breadcrumbs": "0.3.1",
+    "vue-loader": "^15.2.6",
+    "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.2.5",
-    "webpack": "^2.3.0",
-    "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dashboard": "^2.0.0",
+    "webpack-dev-server": "^3.1.4"
   }
 }
