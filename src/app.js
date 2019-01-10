@@ -7,7 +7,7 @@ Vue.use(VueBreadcrumbs);
 
 const Feeds = {template: '<div><router-view/></div>'};
 const Feed = {template: '<div><h2>Feed</h2></div>'};
-const Biz = {template: '<div><h2>Biz</h2></div>'};
+const Biz = {template: '<div><h2>Feeds</h2></div>'};
 const Foo = {template: '<div><h2>Foo</h2></div>'};
 const Bar = {template: '<div><h2>Bar</h2></div>'};
 
