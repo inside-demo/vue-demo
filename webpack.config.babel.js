@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import path from 'path';
+import VueLoaderPlugin from 'vue-loader/lib/plugin';
 
 export default {
 	target: 'web',
@@ -13,7 +14,15 @@ export default {
 		path: path.resolve(__dirname + '/docs/'),
 		filename: '[name].bundle.js'
 	},
+	devServer: {
+	  contentBase: path.resolve(__dirname + '/docs/'),
+	  host: '127.0.0.1',
+	  port: 8888,
+	  hot: true,
+	  inline: true
+	},
 	plugins: [
+		new VueLoaderPlugin(),
 		new DashboardPlugin()
 	],
 	resolveLoader: {
